@@ -4,7 +4,19 @@ import Square from './Square';
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
-  const handleClickOnSquare = (clickedPosition) => {};
+  const handleClickOnSquare = (clickedPosition) => {
+    console.log('square: ', squares);
+    setSquares((currentSquares) => {
+      //these returns are for new values
+      return currentSquares.map((squareValue, position) => {
+        if (clickedPosition === position) {
+          return 'X';
+        }
+
+        return squareValue;
+      });
+    });
+  };
 
   const renderTheSquare = (position) => {
     return (
