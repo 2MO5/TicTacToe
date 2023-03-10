@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Square = ({ value, children }) => {
+const Square = ({ value, clickOnSquare }) => {
   console.log(value);
-  console.log(children);
+
+  const [counter, setCounter] = useState(0);
+
   return (
-    <button className="square" type="button">
+    <button className="square" type="button" onClick={clickOnSquare}>
       {value}
     </button>
   );
