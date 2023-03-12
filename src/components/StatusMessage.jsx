@@ -1,9 +1,11 @@
 import React from 'react';
 
-const StatusMessage = ({ theWinner, isXTheNext, theSquare }) => {
-  const noMovesLeft = theSquare.every((squareValue) => squareValue != null); //check for all the values whether they are not null. Or they are filled!
+const StatusMessage = ({ theWinner, gamingBoard }) => {
+  const { squares, isXNext } = gamingBoard;
 
-  const nextPlayer = isXTheNext ? 'X' : 'O';
+  const noMovesLeft = squares.every((squareValue) => squareValue != null); //check for all the values whether they are not null. Or they are filled!
+
+  const nextPlayer = isXNext ? 'X' : 'O';
   // const statusMessage = theWinner
   //   ? `The Winner is ${theWinner}`
   //   : `Our Next Player is ${nextPlayer}`;
@@ -33,7 +35,7 @@ const StatusMessage = ({ theWinner, isXTheNext, theSquare }) => {
       return (
         <>
           Next is{' '}
-          <span className={isXTheNext ? 'text-green' : 'text-orange'}>
+          <span className={isXNext ? 'text-green' : 'text-orange'}>
             {nextPlayer}
           </span>{' '}
         </>
