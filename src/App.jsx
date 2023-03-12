@@ -87,6 +87,9 @@ function App() {
   };
   return (
     <div className="app">
+      <h1>
+        Tic <span className="text-green">Tac</span> Toe
+      </h1>
       <StatusMessage
         theWinner={winner}
         // isXTheNext={isXNext}
@@ -106,7 +109,7 @@ function App() {
         Go for another Round
       </button>
 
-      <h2>Our Game History until now</h2>
+      <h2 style={{ fontWeight: 'normal' }}>Our Game History until now</h2>
       {/* passing down history state as a prop and also the function moveTo*/}
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
