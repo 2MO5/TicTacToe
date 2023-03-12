@@ -112,6 +112,7 @@ function App() {
       <h2 style={{ fontWeight: 'normal' }}>Our Game History until now</h2>
       {/* passing down history state as a prop and also the function moveTo*/}
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
+      <div className="bg-balls"></div>
     </div>
   );
 }
