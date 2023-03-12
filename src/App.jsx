@@ -80,6 +80,11 @@ function App() {
   const moveTo = (move) => {
     setCurrentMove(move);
   };
+
+  const reset = () => {
+    setCurrentMove(0);
+    setHistory(NEW_GAME);
+  };
   return (
     <div className="app">
       <StatusMessage
@@ -92,6 +97,14 @@ function App() {
         squares={gamingboard.squares}
         handleClickOnSquare={handleClickOnSquare}
       />
+      <button
+        type="button"
+        onClick={() => reset()}
+        className={`btn-reset ${winner ? 'active' : ''}`}
+      >
+        Go for another Round
+      </button>
+
       <h2>Our Game History until now</h2>
       {/* passing down history state as a prop and also the function moveTo*/}
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
