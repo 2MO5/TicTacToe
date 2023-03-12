@@ -19,7 +19,7 @@ function App() {
   // const [isXNext, setIsXNext] = useState(false);
   // const [theNext, setTheNext] = useState(true);
 
-  const winner = calculateWinner(gamingboard.squares);
+  const { winner, winningSquares } = calculateWinner(gamingboard.squares);
   // const nextPlayer = isXNext ? 'X' : 'O';
   // const statusMessage = winner
   //   ? `The Winner is ${winner}`
@@ -96,6 +96,7 @@ function App() {
       <Board
         squares={gamingboard.squares}
         handleClickOnSquare={handleClickOnSquare}
+        winningSquares={winningSquares}
       />
       <button
         type="button"

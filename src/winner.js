@@ -15,8 +15,15 @@ export function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a]; //returning the one that filled that particular slot in the array
+      return {
+        winner: squares[a],
+        winningSquares: lines[i] //entered by the user
+        // winningSquares: [a,b,c]
+      }; //returning the one that filled that particular slot in the array. Could be b or c as well
     }
   }
-  return null;
+  return {
+    winner: null,
+    winningSquares: []
+  };
 }

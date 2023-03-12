@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 
-const Square = ({ value, clickOnSquare }) => {
+const Square = ({ value, clickOnSquare, isWinningSquare }) => {
   console.log(value);
 
-  const [counter, setCounter] = useState(0);
+  const colorClassName = value === 'X' ? 'text-green' : 'text-orange';
+  const winningClassName = isWinningSquare ? 'winning' : '';
 
   return (
-    <button className="square" type="button" onClick={clickOnSquare}>
+    <button
+      className={`square ${colorClassName} ${winningClassName}`}
+      type="button"
+      onClick={clickOnSquare}
+    >
       {value}
     </button>
   );
