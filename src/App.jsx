@@ -88,7 +88,7 @@ function App() {
   return (
     <div className="app">
       <h1>
-        Tic <span className="text-green">Tac</span> Toe
+        Tic <span className="text-green">TaC</span> ToE!
       </h1>
       <StatusMessage
         theWinner={winner}
